@@ -86,7 +86,7 @@ class GPUStackModelComponent(LCModelComponent):
             embedding_models = [
                 model["name"]
                 for model in models_data
-                if "categories" in model and "llm" in model["categories"]
+                if "categories" in model and "llm" in model["categories"] and  model["ready_replicas"] >0
             ]            
             return embedding_models
         except requests.exceptions.RequestException as e:
